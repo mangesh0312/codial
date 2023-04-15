@@ -1,0 +1,29 @@
+
+    <link rel="stylesheet" href="<%= assetPath('css/user_profile.css') %>">
+
+    <img src="<%= user.avatar %>" alt="<%= user.name %>" width="120">
+
+    <h1>Codial /Profile Page</h1>
+
+    <!-- <form action="/users/delete-session" method="POST">
+    <input type="submit" value="Sign Out">
+    </form> -->
+
+    <% if(user.id == profile_user.id){ %> 
+        <!-- if user matches then show the form -->
+        <form action="/users/update/<%= profile_user.id %>"  enctype="multipart/form-data"  method="POST">
+            <input type="text" name="name" placeholder="Your name" value="<%= profile_user.name %>" required>
+            <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email %>" required>
+            <input type="file" name="avatar" placeholder="Profile Picture">
+            <input type="submit" value="Update">
+        </form>
+        
+        <% }else{ %> 
+
+            <!-- else show only the profile page -->
+            <p>Name: <%= profile_user.name %></p>
+            <p>Email: <%= profile_user.email %></p>
+            
+        <% } %>
+
+ 

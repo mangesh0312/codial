@@ -1,0 +1,19 @@
+#home-container{
+    display: flex;
+    font-family: sans-serif;
+    height: 100vh;
+
+    #feed-posts{
+        width: 90%;
+        padding: 10px;
+    }
+
+    #user-friends{
+        width: 10%;
+        padding: 10px;
+        margin-left: 2%;
+        border-left: 2px solid lightgrey;
+        // height: 100vh;
+        // overflow: hidden;
+    }
+}
